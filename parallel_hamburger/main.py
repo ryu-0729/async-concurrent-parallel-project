@@ -3,6 +3,7 @@ from concurrent.futures import ProcessPoolExecutor
 
 
 def parallel_hamburger(cooking_time: float):
+    # 注文
     print("非常に豪華なハンバーガーを注文しました。")
     print("支払い料金の準備をします。")
     time.sleep(2)
@@ -10,9 +11,13 @@ def parallel_hamburger(cooking_time: float):
     time.sleep(3)
     print("料金を支払います。")
     print("料金を受け取ります。")
+
+    # ハンバーガーの準備
     print("非常に豪華なハンバーガーを作ります。")
     time.sleep(cooking_time)
     print("非常に豪華なハンバーガーの準備ができました。")
+
+    # ハンバーガーを食べる
     print("非常に豪華なハンバーガーを受け取ります。")
     print("テーブルに座ります。")
     print("ハンバーガーをいただきます。")
