@@ -47,22 +47,18 @@ async def concurrent_hamburger():
         tg.create_task(order_now())
         tg.create_task(place_order())
 
-        print(f"タスクの開始時刻: {time.strftime('%X')}")
-
-    print(f"タスクの終了時刻: {time.strftime('%X')}")
-
     async with asyncio.TaskGroup() as tg:
         tg.create_task(cooking())
         tg.create_task(conversation_with_someone_you_like())
 
-        print(f"タスクの開始時刻: {time.strftime('%X')}")
-
-    print(f"タスクの終了時刻: {time.strftime('%X')}")
     eating()
 
 
 def main():
+    start = time.time()
     asyncio.run(concurrent_hamburger())
+    end = time.time()
+    print(f"実行時間: {end - start}")
 
 
 if __name__ == "__main__":

@@ -30,14 +30,13 @@ def main():
         ハンバーガーの準備
         ハンバーガーを食べる（ハンバーガーの準備中に恋人との会話ができない）
     """
-    print(f"開始時刻: {time.strftime('%X')}")
-
     with ProcessPoolExecutor(max_workers=2) as executor:
         executor.submit(parallel_hamburger, 10)
         executor.submit(parallel_hamburger, 15)
 
-    print(f"終了時刻: {time.strftime('%X')}")
-
 
 if __name__ == "__main__":
+    start = time.time()
     main()
+    end = time.time()
+    print(f"実行時間: {end - start}")
